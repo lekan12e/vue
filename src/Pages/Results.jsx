@@ -21,6 +21,7 @@ const StudentResultsTable = ({ student }) => {
   return (
     <div className='bg-[#ECF0F5] h-[100vh] w-full p-7 gap-2' >
         <h1 className='font-poppins text-4xl font-[550] mb-8'>Results</h1>
+        <div className='w-full text-center m-5'><h1 className='font-poppins text-red-400 text-2xl' >{student.name}</h1></div>
         <div className=" shadow overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
             <thead>
