@@ -2,7 +2,7 @@ import React from 'react';
 
 const Dashboard = ({isOpened}) => {
   return (
-    <div className="w-full h-[100vh] ">
+    <div className="w-full h-[100vh] bg-[#ECF0F5] ">
       <div className="flex flex-col -slate-600 px-5 py-7 gap-3 justify-start items-start">
         <h1 className=" font-poppins text-4xl font-[550]">Dashboard</h1>
         <h2 className='font-poppins text-2xl font-[400] pt-8'>Notifications</h2>
