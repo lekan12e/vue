@@ -26,11 +26,11 @@ const StudentResultsTable = ({ student }) => {
         <table className="min-w-full divide-y divide-gray-200">
             <thead>
             <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Course</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Test</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Exam</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Grade</th>
+                <th className="px-6 py-3 text-left font-poppins text-xs font-medium text-gray-500 uppercase tracking-wider">Course</th>
+                <th className="px-6 py-3 text-left font-poppins text-xs font-medium text-gray-500 uppercase tracking-wider">Test</th>
+                <th className="px-6 py-3 text-left font-poppins text-xs font-medium text-gray-500 uppercase tracking-wider">Exam</th>
+                <th className="px-6 py-3 text-left font-poppins text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                <th className="px-6 py-3 text-left font-poppins text-xs font-medium text-gray-500 uppercase tracking-wider">Grade</th>
             </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -39,17 +39,17 @@ const StudentResultsTable = ({ student }) => {
                 const grade = getGrade(total);
                 return (
                 <tr key={index} className={index % 2 === 0 ? 'bg-blue-100' : 'bg-gray-100'}>
-                    <td className="px-6 py-4 whitespace-nowrap">{result.course}</td>
-                    <td className="px-6 py-4 whitespace-nowrap">{result.test}</td>
-                    <td className="px-6 py-4 whitespace-nowrap">{result.exam}</td>
-                    <td className="px-6 py-4 whitespace-nowrap">{total}</td>
-                    <td className="px-6 py-4 whitespace-nowrap">{grade}</td>
+                    <td className="px-6 py-4 font-poppins whitespace-nowrap">{result.course}</td>
+                    <td className="px-6 py-4 font-poppins whitespace-nowrap">{result.test}</td>
+                    <td className="px-6 py-4 font-poppins whitespace-nowrap">{result.exam}</td>
+                    <td className="px-6 py-4 font-poppins whitespace-nowrap">{total}</td>
+                    <td className="px-6 py-4 font-poppins whitespace-nowrap">{grade}</td>
                 </tr>
                 );
             })}
             <tr>
-                <td className="px-6 py-4 font-bold" colSpan="4">Overall Average</td>
-                <td className="px-6 py-4 font-bold">{averageMark}</td>
+                <td className="px-6 py-4 font-poppins font-bold" colSpan="4">Overall Average</td>
+                <td className="px-6 py-4 font-poppins font-bold">{averageMark}</td>
             </tr>
             </tbody>
         </table>

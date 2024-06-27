@@ -14,7 +14,7 @@ function Sidebar({ isOpened }) {
       {data.nav.map((nav) => (
           <Link className=' hover:text-violet-900 flex flex-row gap-4 items-center justify-start ml-5 mt-10 text-black' key={nav.name} to={nav.link}>
             <div>{getIconComponent(nav.icon)}</div>
-            <h1 className='font-sans font-normal text-xl'>{nav.name}</h1>
+            <h1 className='font-poppins font-normal text-xl'>{nav.name}</h1>
           </Link>
       ))}
     </div>
