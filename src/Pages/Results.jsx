@@ -1,8 +1,6 @@
-// src/StudentResultsTable.js
 import React from 'react';
-import { studentResults } from '../constants4/data';
 
-const StudentResultsTable = ({isOpened}) => {
+const StudentResultsTable = ({ student }) => {
   const calculateTotal = (test, exam) => test + exam;
 
   const calculateAverage = (results) => {
@@ -18,7 +16,7 @@ const StudentResultsTable = ({isOpened}) => {
     return 'F';
   };
 
-  const averageMark = calculateAverage(studentResults);
+  const averageMark = calculateAverage(student.results);
 
   return (
     <div className='bg-[#ECF0F5] h-[100vh] w-full p-7 gap-2' >
@@ -35,7 +33,7 @@ const StudentResultsTable = ({isOpened}) => {
             </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-            {studentResults.map((result, index) => {
+            {student.results.map((result, index) => {
                 const total = calculateTotal(result.test, result.exam);
                 const grade = getGrade(total);
                 return (
