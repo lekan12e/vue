@@ -17,7 +17,7 @@ function Navbar({ toggle, setStudent }) {
       </div>
       <div className='flex-1 flex justify-between items-center'>
         <div>
-          <MenuIcon className='hover:text-white rounded-xl w-7 h-7 text-blue-700 cursor-pointer' onClick={toggle} />
+          <MenuIcon className='hover:text-white w-7 h-7 text-blue-700 cursor-pointer' onClick={toggle} />
         </div>
         <div className='mr-4'>
           <AccountBoxIcon sx={{ height: "30px", width: "30px", color: '#4b5543', cursor: "pointer", borderRadius: "90px" }} onClick={togglePopUp} />

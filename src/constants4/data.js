@@ -38,6 +38,8 @@ export const data = {
 export const students = [
     {
       name: "Olaide Yusuf",
+      pictur: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO-SCAyEOQVCBLmU60ITRMvK8_on9o63mmDg&s",
+      class: "JSS 3 blue",
       email: "yusufolaide@gmail.com",
       password: "yusuf214",
       results: [
@@ -53,6 +55,8 @@ export const students = [
     },
     {
       name: "Babajide Awofeso",
+      picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScEgrOhwLbzaE-19x8GdXCcfYPil44arh4TA&s",
+      class: "JSS 2 gold",
       email: "babajideawofeso@gmail.com",
       password: "Babajide656",
       results: [
@@ -68,6 +72,8 @@ export const students = [
     },
     {
       name: "Onimisi Ajayi",
+      picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVCpfMglhYc7GTk9Fndq5KqmDUfN0-zUWnCQ&s",
+      class: "JSS 3 Red",
       email: "onimisiajayi@gmail.com",
       password: "Onimisi342",
       results: [
@@ -83,6 +89,8 @@ export const students = [
     },
     {
       name: "Nikki Omiyale",
+      picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSONm7UKw4ef2NlvNvLfZrJoq8A6CyqwaR3A&s",
+      class: "JSS 3 Yellow",
       email: "nikkiomiyale@gmail.com",
       password: "Omiyale212",
       results: [
