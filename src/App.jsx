@@ -20,7 +20,7 @@ const App = ({ student, setStudent }) => {
         <Sidebar isOpened={isOpened} student={student} />
         <div className={`top-40 transition-margin duration-300 ease-in-out ${isOpened ? 'ml-[200px]' : 'ml-0'} flex-grow`}>
           <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard student={student} />} />
             <Route path="/results" element={<StudentResultsTable student={student} />} />
             <Route path="/profile" element={<Profile student={student} />} />
             <Route path="*" element={<Navigate to="/dashboard" />} />
