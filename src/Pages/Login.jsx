@@ -14,29 +14,31 @@ const Login = ({ setStudent }) => {
       const userData = { ...user, loginTimestamp };
       setStudent(userData);
       localStorage.setItem('student', JSON.stringify(userData));
-      navigate('/dashboard'); // Redirect to dashboard after successful login
+      navigate('/dashboard');
     } else {
       alert('Invalid email or password');
     }
   };
 
   return (
-    <div className="flex flex-col gap-3 items-center justify-center h-[100vh] w-full bg-gradient-to-t from-purple-600 to-blue-600">
-      <div className='absolute top-48'><h1 className=' uppercase font-extrabold text-7xl text-gray-50 font-poppins'>result checker</h1></div>
-      <h1 className="text-4xl font-poppins text-gray-100 mb-4">Login</h1>
+    <div className="flex flex-col gap-3 items-center justify-center h-screen w-full bg-gradient-to-t from-purple-600 to-blue-600">
+      <div className='absolute top-32 md:top-48'>
+        <h1 className='uppercase font-extrabold text-4xl md:text-7xl text-gray-50 font-poppins'>result checker</h1>
+      </div>
+      <h1 className="text-2xl md:text-4xl font-poppins text-gray-100 mb-4">Login</h1>
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="mb-2 font-poppins text-xl px-8 py-2 w-96 h-16 outline-none border rounded"
+        className="mb-2 font-poppins text-lg md:text-xl px-8 py-2 w-80 md:w-96 h-12 md:h-16 outline-none border rounded"
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="mb-2 font-poppins text-xl px-8 py-2 w-96 h-16 outline-none border rounded"
+        className="mb-2 font-poppins text-lg md:text-xl px-8 py-2 w-80 md:w-96 h-12 md:h-16 outline-none border rounded"
       />
       <button onClick={handleLogin} className="px-4 py-2 bg-blue-500 text-white rounded">Login</button>
     </div>

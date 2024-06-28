@@ -12,8 +12,8 @@ function Navbar({ toggle, setStudent }) {
 
   return (
     <nav className='flex h-[70px] sticky top-0 z-20 w-full items-center shadow-sm bg-white'>
-      <div className='ml-10 mr-5 items-center justify-center p-4'>
-        <h1 className='text-2xl font-poppins text-center font-normal uppercase'>Result Checker</h1>
+      <div className='ml-4 sm:ml-10 mr-5 items-center justify-center p-4'>
+        <h1 className='text-lg sm:text-2xl font-poppins text-center font-normal uppercase'>Result Checker</h1>
       </div>
       <div className='flex-1 flex justify-between items-center'>
         <div>
@@ -23,7 +23,7 @@ function Navbar({ toggle, setStudent }) {
           <AccountBoxIcon sx={{ height: "30px", width: "30px", color: '#4b5543', cursor: "pointer", borderRadius: "90px" }} onClick={togglePopUp} />
         </div>
       </div>
-      {popUp && <AccountSettings setStudent={setStudent} />}
+      <AccountSettings isPopUp={popUp} setStudent={setStudent} />
     </nav>
   );
 }
