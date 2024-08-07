@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { LoginOutlined } from '@mui/icons-material';
+import headerLogo from "../assets/education-logo-template 1.png"
 
 const Login = ({ setStudent }) => {
   const [email, setEmail] = useState('');
@@ -29,7 +30,7 @@ const Login = ({ setStudent }) => {
   return (
     <div className="flex flex-col gap-3 items-center justify-center h-screen w-full bg-login-img bg-cover ">
       <div className='absolute top-32 md:top-48'>
-        <img src="../src/assets/education-logo-template 1.png" className='w-[677px] h-[171px]' alt="" />
+        <img src={headerLogo} className='w-[677px] h-[171px]' alt="" />
         <h1 className='font-poppins text-[#042b56] text-center text-6xl font-extrabold tracking-wider'>Proop Secondary School</h1>
       </div>
       <div className='flex flex-col w-[520px] items-center rounded-3xl shadow-2xl gap-1 h-[350px] bg-[#d9d9d9]'>
