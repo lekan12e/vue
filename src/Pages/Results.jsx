@@ -1,8 +1,20 @@
+import { Gauge, gaugeClasses } from '@mui/x-charts';
+import { ThemeProvider,createTheme } from '@mui/material';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 const StudentResultsTable = ({ student }) => {
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#1976d2',
+      },
+      secondary: {
+        main: '#dc004e',
+      },
+    },
+  });
   const studentt = useSelector(state => state.students);
   console.log(studentt);
   
@@ -24,7 +36,7 @@ const StudentResultsTable = ({ student }) => {
   const averageMark = calculateAverage(student.results);
 
   return (
-    <div className='w-full mx-14 my-10 p-7 gap-2 flex'>
+    <div className='w-full mx-14 my-10 p-7 gap-20 flex'>
       <div className='w-full m-5'>
         <h1 className='font-poppins text-[25px] sm:text-[25px] font-normal mb-8'>{student.name}'s <span className='font-semibold'>results</span></h1>
         <div className='mx-8'>
@@ -74,11 +86,34 @@ const StudentResultsTable = ({ student }) => {
           </table>
         </div>
       </div>
-      <div className='flex flex-col justify-end'>
-        <div className='w-[100px] h-[100px] border-[10px] rounded-full flex items-center justify-center border-blue-700'>
-          <h1 className=''>{averageMark}</h1>
+      <div className='flex flex-col items-center gap-3 justify-end'>
+        <div className='font-poppins text-[30px]'>
+          <ThemeProvider theme={theme}>
+           <Gauge  sx={(theme) => ({
+                      [`& .${gaugeClasses.valueText}`]: {
+                        fontSize: 40,
+                      },
+                      [`& .${gaugeClasses.valueArc}`]: {
+                        fill: '#021436',
+                      },
+                      [`& .${gaugeClasses.referenceArc}`]: {
+                        fill: theme.palette.text.disabled,
+                      },
+                  })}
+                  width={200} 
+                  height={200} 
+                  value={averageMark}  
+                  cornerRadius="50%" 
+            />
+          </ThemeProvider>
         </div>
-        <div className=''></div>
+        <div className='rounded-2xl bg-white w-[400px]  border-2 shadow-lg'>
+          <div className='text-[14px] px-6 py-4 border-b-2 font-poppins font-extrabold'><p>Term’s Overall Performance</p></div>
+          <div className='text-[14px] px-6 py-4 border-b-2 font-poppins font-medium'><p>Days Attended:<span className='font-extrabold'>{}</span></p></div>
+          <div className='text-[14px] px-6 py-4 border-b-2 font-poppins font-medium'><p>Tests Taken:<span className='font-extrabold'>{}</span></p></div>
+          <div className='text-[14px] px-6 py-4 border-b-2 font-poppins font-medium'><p>Assignments Submitted:<span className='font-extrabold'>{}</span></p></div>
+          <div className='text-[14px] px-6 py-4 border-b-2 font-poppins font-medium'><p>Extra-Curricular Activities involved:<span className='font-extrabold'>{}</span></p></div>
+        </div>
       </div>
     </div>
   );

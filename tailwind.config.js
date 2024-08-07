@@ -11,12 +11,11 @@ module.exports = {
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"]
-     },
-     backgroundImage: {
-      'login-img': "url('./src/assets/SMRS-sign-up-bg.png')",
-    }
+      },
+      backgroundImage: {
+        'login-img': "url('../src/assets/SMRS-sign-up-bg.png')"
+      }
     },
   },
   plugins: [],
 }
-

@@ -6,15 +6,10 @@ import StudentResultsTable from './Pages/Results';
 import Profile from './Pages/Profile';
 
 const App = ({ student, setStudent }) => {
-  const [isOpened, setIsOpened] = useState(false);
-
-  const toggle = () => {
-    setIsOpened(!isOpened);
-  };
 
   return (
     <div className=' flex flex-col'>
-      <Navbar isOpened={isOpened} toggle={toggle} setStudent={setStudent} />
+      <Navbar setStudent={setStudent} />
       <div className="flex">
           <Routes>
             <Route path="/dashboard" element={<Dashboard student={student} />} />
