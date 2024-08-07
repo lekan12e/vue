@@ -32,14 +32,19 @@ function Navbar() {
         <div className='left-16 top-28 absolute cursor-pointer'>
           <img onClick={toggle} className='w-24' src={menuWhite} alt="menu-icon" />
         </div>
-        <div className="flex flex-col gap-4 items-center justify-center mt-24">
-          {data.nav.map((nav) => (
-            <Link className='hover:text-violet-900 flex flex-row gap-8 items-center justify-start ml-5 mt-10 text-[white]' onClick={toggle} key={nav.name} to={nav.link}>
-              <div>{getIconComponent(nav.icon)}</div>
-              <h1 className='font-poppins font-semibold tracking-wider text-[54px]'>{nav.name}</h1>
-            </Link>
-          ))}
+        <div className="flex flex-col items-center gap-80">
+          <div className="flex flex-col gap-4 items-center justify-center mt-24">
+            {data.nav.map((nav) => (
+              <Link className='hover:text-violet-900 flex flex-row gap-8 items-center justify-start ml-5 mt-10 text-[white]' onClick={toggle} key={nav.name} to={nav.link}>
+                <div>{getIconComponent(nav.icon)}</div>
+                <h1 className='font-poppins font-semibold tracking-wider text-[54px]'>{nav.name}</h1>
+              </Link>
+            ))}
         </div>
+        <div className="font-poppins text-[#35435] text-[30px] bg-white px-6 py-2 rounded-2xl font-bold">
+              <button>Log Out <Icons.LogoutOutlined sx={{width: "30px", height: "30px"}}></Icons.LogoutOutlined></button>
+            </div>
+          </div>
       </div>
       <div className="flex flex-col items-center justify-center gap-3 mt-28">
         <img src="../src/assets/education-logo-template 1.png" className='w-[800px] h-[200px]' alt="" />
