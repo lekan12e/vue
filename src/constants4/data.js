@@ -14,14 +14,14 @@ export const data = {
         },
         {
             id: 3,
-            icon : "Dashboard" ,
-            name : "Dashboard",
+            icon : "MonetizationOn" ,
+            name : "Payment",
             link: "dashboard"
         },
         {
             id: 4,
-            icon : "SentimentVeryDissatisfied" ,
-            name : "Outstanding Results",
+            icon : "ReceiptLong" ,
+            name : "Student Bill",
             link: "failedresults"
         },
     ]

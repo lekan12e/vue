@@ -3,7 +3,7 @@ import * as Icons from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import menu from '../assets/Xbox-Menu.png';
 import menuWhite from '../assets/Xbox-Menu-white.png';
-import React from "react";
+import React from "react"
 
 function Navbar() {
   const getIconComponent = (iconName) => {
@@ -34,9 +34,9 @@ function Navbar() {
         </div>
         <div className="flex flex-col gap-4 items-center justify-center mt-24">
           {data.nav.map((nav) => (
-            <Link className='hover:text-violet-900 flex flex-row gap-4 items-center justify-start ml-5 mt-10 text-[white]' onClick={toggle} key={nav.name} to={nav.link}>
+            <Link className='hover:text-violet-900 flex flex-row gap-8 items-center justify-start ml-5 mt-10 text-[white]' onClick={toggle} key={nav.name} to={nav.link}>
               <div>{getIconComponent(nav.icon)}</div>
-              <h1 className='font-poppins font-normal text-6xl'>{nav.name}</h1>
+              <h1 className='font-poppins font-semibold tracking-wider text-[54px]'>{nav.name}</h1>
             </Link>
           ))}
         </div>
