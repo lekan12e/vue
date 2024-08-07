@@ -8,6 +8,8 @@ const Login = ({ setStudent }) => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const students = useSelector(state => state.students)
+  const [err, setErr] = useState(false)
+  console.log(students)
 
   const handleLogin = () => {
     const user = students.find((student) => student.email === email && student.password === password);
@@ -18,9 +20,11 @@ const Login = ({ setStudent }) => {
       localStorage.setItem('student', JSON.stringify(userData));
       navigate('/dashboard');
     } else {
-      alert('Invalid email or password');
+      setErr(true)
     }
+    console.log(user)
   };
+  
 
   return (
     <div className="flex flex-col gap-3 items-center justify-center h-screen w-full bg-login-img bg-cover ">
@@ -44,6 +48,7 @@ const Login = ({ setStudent }) => {
         onChange={(e) => setPassword(e.target.value)}
         className="mb-2 font-poppins text-lg md:text-xl px-8 py-2 w-96 rounded-md shadow-lg h-12 md:h-16 outline-none border border-[3px] border-black rounded"
       />
+      <p className={`text-red-600 ${err ? "block" : "hidden"}`}>invalid username or email</p>
       <button onClick={handleLogin} className="px-12 mt-6 py-4 bg-[#021436] text-3xl font-poppins rounded-md text-white rounded">Login <LoginOutlined /></button>
       </div>
     </div>

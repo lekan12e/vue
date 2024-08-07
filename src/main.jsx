@@ -18,6 +18,7 @@ const Main = () => {
     if (storedUser) {
       setLoggedInUser(storedUser);
     }
+    console.log(storedUser)
   }, []);
 
   return (
