@@ -10,7 +10,7 @@ function Sidebar({ isOpened }) {
   }
 
   return (
-    <div className={`fixed top-[75px] left-0 h-full bg-white text-black transition-width duration-300 ease-in-out z-20 ${isOpened ? 'w-[200px]' : 'w-0'} overflow-hidden`}>
+    <div className={`fixed top-0 left-0 h-full bg-white text-black transition-width duration-300 ease-in-out z-20 w-0 overflow-hidden`}>
       {data.nav.map((nav) => (
           <Link className='hover:text-violet-900 flex flex-row gap-4 items-center justify-start ml-5 mt-10 text-black' key={nav.name} to={nav.link}>
             <div>{getIconComponent(nav.icon)}</div>

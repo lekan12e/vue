@@ -7,6 +7,8 @@ import StudentResultsTable from './Pages/Results';
 import Profile from './Pages/Profile';
 import Login from './Pages/Login';
 import './index.css';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 const Main = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -19,12 +21,14 @@ const Main = () => {
   }, []);
 
   return (
-    <Router>
+    <Provider store={store}>
+      <Router>
       <Routes>
         <Route path="/login" element={<Login setStudent={setLoggedInUser} />} />
         <Route path="*" element={loggedInUser ? <App student={loggedInUser} setStudent={setLoggedInUser} /> : <Navigate to="/login" />} />
       </Routes>
     </Router>
+    </Provider>
   );
 };
 

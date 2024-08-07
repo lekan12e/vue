@@ -1,30 +1,51 @@
-import React from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import AccountSettings from "../pop ups/AccountSettings";
+import { data } from "../constants4/data";
+import * as Icons from '@mui/icons-material';
+import { Link } from 'react-router-dom';
+import menu from '../assets/Xbox-Menu.png';
+import menuWhite from '../assets/Xbox-Menu-white.png';
+import React from "react";
 
-function Navbar({ toggle, setStudent }) {
-  const [popUp, setPopUp] = React.useState(false);
+function Navbar() {
+  const getIconComponent = (iconName) => {
+    const IconComponent = Icons[iconName];
+    return IconComponent ? <IconComponent sx={{width: "90px", height: "90px"}} /> : null;
+  }
 
-  const togglePopUp = () => {
-    setPopUp(!popUp);
+  /* <div className='flex flex-col w-full items-start mx-36 mt-6'>
+      <h1 className='font-poppins text-[40px] text-[#032B56] font-semibold '>Profile</h1>
+      <p className='font-poppins text-[#35435E] text-[20px]'>Students General Information</p>
+      <div className='bg-[#021436] w-full h-1'></div>
+    </div>
+    */
+  const [isOpened, setIsOpened] = React.useState(false);
+
+  const toggle = () => {
+    setIsOpened(!isOpened);
   };
-
+  
   return (
-    <nav className='flex h-[70px] sticky top-0 z-20 w-full items-center shadow-sm bg-white'>
-      <div className='ml-4 sm:ml-10 mr-5 items-center justify-center p-4'>
-        <h1 className='text-lg sm:text-2xl font-poppins text-center font-normal uppercase'>Result Checker</h1>
+    <div className='flex gap-[237px] justify-center'>
+      <div onClick={toggle} className='left-16 top-28 absolute cursor-pointer'>
+        <img className='w-24' src={menu} alt="menu-icon" />
       </div>
-      <div className='flex-1 flex justify-between items-center'>
-        <div>
-          <MenuIcon className='hover:text-white w-7 h-7 text-blue-700 cursor-pointer' onClick={toggle} />
+      <div className={`absolute w-full h-[100vh] bg-[#35435E] ${isOpened ? "block" : "hidden"} text-black transition-width duration-300 ease-in-out z-20 overflow-hidden`}>
+        <div className='left-16 top-28 absolute cursor-pointer'>
+          <img onClick={toggle} className='w-24' src={menuWhite} alt="menu-icon" />
         </div>
-        <div className='mr-4'>
-          <AccountBoxIcon sx={{ height: "30px", width: "30px", color: '#4b5543', cursor: "pointer", borderRadius: "90px" }} onClick={togglePopUp} />
+        <div className="flex flex-col gap-4 items-center justify-center mt-24">
+          {data.nav.map((nav) => (
+            <Link className='hover:text-violet-900 flex flex-row gap-4 items-center justify-start ml-5 mt-10 text-[white]' onClick={toggle} key={nav.name} to={nav.link}>
+              <div>{getIconComponent(nav.icon)}</div>
+              <h1 className='font-poppins font-normal text-6xl'>{nav.name}</h1>
+            </Link>
+          ))}
         </div>
       </div>
-      <AccountSettings isPopUp={popUp} setStudent={setStudent} />
-    </nav>
+      <div className="flex flex-col items-center justify-center gap-3 mt-28">
+        <img src="../src/assets/education-logo-template 1.png" className='w-[800px] h-[200px]' alt="" />
+        <h1 className='font-poppins text-[#042b56] text-center text-8xl font-[2000] tracking-wider'>Proop Secondary School</h1>
+      </div>
+    </div>
   );
 }
 
